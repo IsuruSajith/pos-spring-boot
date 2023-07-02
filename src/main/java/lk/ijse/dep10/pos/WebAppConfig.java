@@ -28,7 +28,7 @@ public class WebAppConfig {
                 .title("POS System REST API Documentation")
                 .description("Welcome to POS System REST API Documentation")
                 .version("v1")
-                .license("Copyright (c) 2023 DEP-10. All Rights Reserved.")
+                .license("Copyright (c) 2023. All Rights Reserved.")
                 .build();
     }
 }
