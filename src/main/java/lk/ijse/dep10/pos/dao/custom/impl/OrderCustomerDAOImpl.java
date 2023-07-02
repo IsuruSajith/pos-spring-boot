@@ -1,23 +1,22 @@
 package lk.ijse.dep10.pos.dao.custom.impl;
 
 import lk.ijse.dep10.pos.dao.custom.OrderCustomerDAO;
-import lk.ijse.dep10.pos.dao.util.JdbcTemplate;
 import lk.ijse.dep10.pos.entity.OrderCustomer;
-import org.springframework.stereotype.Component;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
 import java.util.List;
 import java.util.Optional;
 
 import static lk.ijse.dep10.pos.dao.util.Mappers.ORDER_CUSTOMER_ROW_MAPPER;
 
-@Component
+@Repository
 public class OrderCustomerDAOImpl implements OrderCustomerDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
-    public void setConnection(Connection connection) {
-        this.jdbcTemplate = new JdbcTemplate(connection);
+    public OrderCustomerDAOImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public long count() throws Exception {

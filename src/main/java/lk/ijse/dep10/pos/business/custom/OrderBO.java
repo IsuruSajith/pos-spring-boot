@@ -1,12 +1,11 @@
 package lk.ijse.dep10.pos.business.custom;
 
-import lk.ijse.dep10.pos.business.SuperBO;
 import lk.ijse.dep10.pos.dto.OrderDTO;
 import lk.ijse.dep10.pos.dto.OrderDTO2;
 
 import java.util.List;
 
-public interface OrderBO extends SuperBO {
+public interface OrderBO {
 
     Integer placeOrder(OrderDTO orderDTO) throws Exception;
 

@@ -3,11 +3,10 @@ package lk.ijse.dep10.pos.dao;
 import lk.ijse.dep10.pos.entity.SuperEntity;
 
 import java.io.Serializable;
-import java.sql.Connection;
 import java.util.List;
 import java.util.Optional;
 
-public interface CrudDAO<T extends SuperEntity, ID extends Serializable> extends SuperDAO{
+public interface CrudDAO<T extends SuperEntity, ID extends Serializable> {
 
     long count() throws Exception;
 
@@ -15,7 +14,7 @@ public interface CrudDAO<T extends SuperEntity, ID extends Serializable> extends
 
     void update(T entity) throws Exception;
 
-    void deleteById(ID pk)throws Exception;
+    void deleteById(ID pk) throws Exception;
 
     Optional<T> findById(ID pk) throws Exception;
 

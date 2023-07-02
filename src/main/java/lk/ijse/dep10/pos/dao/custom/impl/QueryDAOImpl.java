@@ -1,24 +1,22 @@
 package lk.ijse.dep10.pos.dao.custom.impl;
 
 import lk.ijse.dep10.pos.dao.custom.QueryDAO;
-import lk.ijse.dep10.pos.dao.util.JdbcTemplate;
 import lk.ijse.dep10.pos.dto.OrderDTO2;
-import org.springframework.stereotype.Component;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static lk.ijse.dep10.pos.dao.util.Mappers.ORDER_DTO_2_ROW_MAPPER;
 
-@Component
+@Repository
 public class QueryDAOImpl implements QueryDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
-    @Override
-    public void setConnection(Connection connection) {
-        jdbcTemplate = new JdbcTemplate(connection);
+    public QueryDAOImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
